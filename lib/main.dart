@@ -51,18 +51,21 @@ class MyHomePage extends StatelessWidget {
               context,
               'Calendario de recolección',
               () {},
+              key: const Key('btnCalendar'),
             ),
             const SizedBox(height: 20),
             _buildNavigationButton(
               context,
               'Puntos de Reciclaje',
               () {},
+              key: const Key('btnMap'),
             ),
             const SizedBox(height: 20),
             _buildNavigationButton(
               context,
               'Mis Estadísticas',
               () {},
+              key: const Key('btnStats'),
             ),
           ],
         ),
@@ -71,8 +74,9 @@ class MyHomePage extends StatelessWidget {
   }
 
   Widget _buildNavigationButton(
-      BuildContext context, String text, VoidCallback onPressed) {
+      BuildContext context, String text, VoidCallback onPressed, {Key? key}) {
     return ElevatedButton(
+      key: key,
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(300, 60), 
