@@ -79,6 +79,7 @@ class MyHomePage extends StatelessWidget {
       key: key,
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.black,
         minimumSize: const Size(300, 60), 
         textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       ),
