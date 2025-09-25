@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,31 +9,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
     return MaterialApp(
       title: 'Eco-Ciudad',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
-        textTheme: GoogleFonts.patrickHandTextTheme(textTheme).copyWith(
-          labelLarge: GoogleFonts.patrickHand(
-            textStyle: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            minimumSize: const Size(300, 60),
-            textStyle: GoogleFonts.patrickHand(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-            foregroundColor: Colors.black,
-          ),
-        ),
       ),
       home: const MyHomePage(),
     );
@@ -58,10 +37,10 @@ class MyHomePage extends StatelessWidget {
               color: Colors.white,
             ),
             const SizedBox(height: 20),
-            Text(
+            const Text(
               'Bienvenido a Eco-Ciudad',
               textAlign: TextAlign.center,
-              style: GoogleFonts.patrickHand(
+              style: TextStyle(
                 fontSize: 32,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -95,6 +74,10 @@ class MyHomePage extends StatelessWidget {
       BuildContext context, String text, VoidCallback onPressed) {
     return ElevatedButton(
       onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        minimumSize: const Size(300, 60), 
+        textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      ),
       child: Text(text),
     );
   }
