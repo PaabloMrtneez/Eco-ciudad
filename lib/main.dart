@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/screens/calendar_screen.dart';
+import 'package:myapp/screens/map_screen.dart';
+import 'package:myapp/screens/stats_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,21 +53,36 @@ class MyHomePage extends StatelessWidget {
             _buildNavigationButton(
               context,
               'Calendario de recolección',
-              () {},
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CalendarScreen()),
+                );
+              },
               key: const Key('btnCalendar'),
             ),
             const SizedBox(height: 20),
             _buildNavigationButton(
               context,
               'Puntos de Reciclaje',
-              () {},
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapScreen()),
+                );
+              },
               key: const Key('btnMap'),
             ),
             const SizedBox(height: 20),
             _buildNavigationButton(
               context,
               'Mis Estadísticas',
-              () {},
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const StatsScreen()),
+                );
+              },
               key: const Key('btnStats'),
             ),
           ],
