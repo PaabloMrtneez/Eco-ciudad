@@ -2,19 +2,20 @@
 
 *Pablo Martínez, Adrián Tamargo, Adrián Francino, & Álvaro Hernández*
 
-*Desarrollo de Aplicaciones Móviles*
-
-## Resumen
-
-Este informe detalla el desarrollo y las soluciones técnicas implementadas en la aplicación móvil "Eco-Ciudad", desarrollada con el framework Flutter. El proyecto tiene como objetivo principal fomentar prácticas sostenibles entre los ciudadanos a través de una plataforma móvil intuitiva. Se abordarán específicamente el diseño de la interfaz, la arquitectura de navegación, la gestión del ciclo de vida y del estado de la aplicación, y las metodologías de prueba empleadas para garantizar su correcto funcionamiento. El documento sigue las directrices de formato de la 7ª edición del Manual de Publicaciones de la American Psychological Association (APA).
 
 ## Introducción
 
-Eco-Ciudad es una aplicación móvil desarrollada en Flutter, diseñada para servir como una herramienta integral para ciudadanos que desean adoptar un estilo de vida más sostenible. Los objetivos primordiales de la aplicación son: (a) facilitar el acceso a información relevante sobre la recolección de residuos, (b) ayudar a localizar puntos de reciclaje cercanos y (c) motivar a los usuarios a través del seguimiento de sus propias estadísticas de reciclaje. El proyecto busca promover la conciencia ambiental y la participación comunitaria en iniciativas ecológicas.
+Eco-Ciudad es una aplicación móvil desarrollada en Flutter, diseñada para servir como una herramienta integral para ciudadanos que desean adoptar un estilo de vida más sostenible.
+
+Los objetivos del Proyecto son: 
+
+Recordar los días de recolección de basura y reciclaje.
+Encontrar puntos de reciclaje cercanos.
+Llevar un registro básico de su actividad de reciclaje.
 
 ## Diseño de la UI/UX
 
-El diseño de la interfaz de usuario (UI) y la experiencia de usuario (UX) se centraron en la simplicidad y la claridad, con el fin de garantizar una navegación intuitiva para un público amplio.
+El diseño de la interfaz de usuario (UI) y la experiencia de usuario (UX) se centraron en la simplicidad y la claridad, con el fin de garantizar una navegación intuitiva para un público amplio hemos escogido el color verde al tener una fuerte relacion con la naturaleza y el medio ambiente.
 
 ### Capturas
 <img width="436" height="719" alt="image" src="https://github.com/user-attachments/assets/fbff96d7-8e5b-43e9-8fb5-6b82dc3950ba" /> 
