@@ -7,10 +7,14 @@ class CalendarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Calendar'),
+        title: const Text('Calendario de Recolección'),
       ),
       body: const Center(
-        child: Text('Calendar Screen'),
+        child: Text(
+          'Aquí se mostrará el calendario de recolección.',
+          style: TextStyle(fontSize: 18),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

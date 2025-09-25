@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.myapp"
-    compileSdk = 34
+    compileSdk = 36 // Updated to meet plugin requirements
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -24,11 +24,11 @@ android {
         applicationId = "com.example.myapp"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
+        minSdk = flutter.minSdkVersion // Required for google_maps_flutter
         targetSdk = 34
         versionCode = flutter.versionCode
         versionName = flutter.versionName
-        multiDexEnabled = true
+        multiDexEnabled = true // Enable MultiDex
     }
 
     buildTypes {

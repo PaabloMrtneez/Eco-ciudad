@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/screens/calendar_screen.dart';
 import 'package:myapp/screens/map_screen.dart';
 import 'package:myapp/screens/stats_screen.dart';
+import 'package:myapp/widgets/animated_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.green[800], // Consistent background color
+          foregroundColor: Colors.white, // Sets default color for icons and text
+          titleTextStyle: const TextStyle(
+            color: Colors.white,
+            fontSize: 20, // Default AppBar title size
+            fontWeight: FontWeight.bold, // Make the title text thicker
+          ),
+          iconTheme: const IconThemeData(
+            color: Colors.white, // Ensure all icons are white
+          ),
+        ),
       ),
       home: const MyHomePage(),
     );
@@ -50,58 +63,41 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-            _buildNavigationButton(
-              context,
-              'Calendario de recolección',
-              () {
+            AnimatedButton(
+              title: 'Calendario de recolección',
+              onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const CalendarScreen()),
                 );
               },
-              key: const Key('btnCalendar'),
+              buttonKey: const Key('btnCalendar'),
             ),
             const SizedBox(height: 20),
-            _buildNavigationButton(
-              context,
-              'Puntos de Reciclaje',
-              () {
+            AnimatedButton(
+              title: 'Puntos de Reciclaje',
+              onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const MapScreen()),
                 );
               },
-              key: const Key('btnMap'),
+              buttonKey: const Key('btnMap'),
             ),
             const SizedBox(height: 20),
-            _buildNavigationButton(
-              context,
-              'Mis Estadísticas',
-              () {
+            AnimatedButton(
+              title: 'Mis Estadísticas',
+              onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const StatsScreen()),
                 );
               },
-              key: const Key('btnStats'),
+              buttonKey: const Key('btnStats'),
             ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildNavigationButton(
-      BuildContext context, String text, VoidCallback onPressed, {Key? key}) {
-    return ElevatedButton(
-      key: key,
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.black,
-        minimumSize: const Size(300, 60), 
-        textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-      ),
-      child: Text(text),
     );
   }
 }
