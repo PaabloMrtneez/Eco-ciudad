@@ -17,8 +17,8 @@ Eco-Ciudad es una aplicación móvil desarrollada en Flutter, diseñada para ser
 El diseño de la interfaz de usuario (UI) y la experiencia de usuario (UX) se centraron en la simplicidad y la claridad, con el fin de garantizar una navegación intuitiva para un público amplio.
 
 ### Capturas
-<img width="436" height="719" alt="image" src="https://github.com/user-attachments/assets/fbff96d7-8e5b-43e9-8fb5-6b82dc3950ba" /> Pantalla de inicio
-<img width="429" height="718" alt="image" src="https://github.com/user-attachments/assets/64159ca3-66b6-4e5b-a0fd-5d67510e0dfc" /> Pantalla de estadisticas
+Pantalla de inicio <img width="436" height="719" alt="image" src="https://github.com/user-attachments/assets/fbff96d7-8e5b-43e9-8fb5-6b82dc3950ba" /> 
+Pantalla de estadisticas <img width="429" height="718" alt="image" src="https://github.com/user-attachments/assets/64159ca3-66b6-4e5b-a0fd-5d67510e0dfc" /> 
 
 
 
