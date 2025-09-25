@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MapScreen extends StatelessWidget {
   const MapScreen({super.key});
@@ -8,6 +9,25 @@ class MapScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Puntos de Reciclaje'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.screen_rotation),
+            onPressed: () {
+              final currentOrientation = MediaQuery.of(context).orientation;
+              if (currentOrientation == Orientation.portrait) {
+                SystemChrome.setPreferredOrientations([
+                  DeviceOrientation.landscapeLeft,
+                  DeviceOrientation.landscapeRight,
+                ]);
+              } else {
+                SystemChrome.setPreferredOrientations([
+                  DeviceOrientation.portraitUp,
+                  DeviceOrientation.portraitDown,
+                ]);
+              }
+            },
+          ),
+        ],
       ),
       body: const Center(
         child: Text(
