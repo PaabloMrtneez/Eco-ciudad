@@ -93,8 +93,8 @@ Como aprendizaje clave, destaca la importancia de comprender y utilizar las herr
 
 ## Referencias
 
-Flutter. (s.f.-a). *Persisting state with RestorationMixin*. Recuperado de https://docs.flutter.dev/cookbook/persistence/restoration
+https://docs.flutter.dev/cookbook/persistence/restoration
 
-Flutter. (s.f.-b). *Navigation and routing*. Recuperado de https://docs.flutter.dev/ui/navigation
+https://docs.flutter.dev/ui/navigation
 
-Flutter. (s.f.-c). *What are widgets?*. Recuperado de https://docs.flutter.dev/ui#what-are-widgets
+https://docs.flutter.dev/ui#what-are-widgets
