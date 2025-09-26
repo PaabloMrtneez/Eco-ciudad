@@ -33,6 +33,8 @@ Para la pantalla principal, se optó por un diseño vertical simple utilizando u
 
 La navegación se diseñó para ser predecible y coherente con los patrones de diseño móvil establecidos. Desde la pantalla de inicio, cada botón lleva a una sección específica de la aplicación. Este flujo de navegación directo minimiza la carga cognitiva del usuario, permitiéndole acceder a la funcionalidad deseada con un solo toque. La transición entre pantallas utiliza `MaterialPageRoute`, que proporciona animaciones estándar de la plataforma, reforzando la sensación de familiaridad y profesionalismo en la aplicación.
 
+Ademas hemos agregado un boton temporalmente para rotar la pantalla ya que en firebase no hay manera de rotar el movil.
+
 ### Navegación entre Pantallas
 
 Flutter gestiona la navegación mediante un widget `Navigator` que administra una pila de `Routes`
