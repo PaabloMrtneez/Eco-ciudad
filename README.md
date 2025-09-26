@@ -31,6 +31,3 @@ En la parte inferior de la pantalla, encontrarás una barra de navegación con t
 *   **Ver tu progreso:** El número en la pantalla se actualizará, mostrándote el total de bolsas que has reciclado durante el mes.
 *   **Rotar la pantalla:** Si prefieres ver la aplicación en modo horizontal, puedes presionar el icono de rotación en la esquina superior derecha.
 
-### 3 Funcionalidad extra 
-**Rotar la pantalla:** Si prefieres ver la aplicación en modo horizontal, puedes presionar el icono de rotación en la esquina superior derecha.
-
