@@ -27,19 +27,16 @@ El diseño de la interfaz de usuario (UI) y la experiencia de usuario (UX) se ce
 
 ### Composición del Layout
 
-A diferencia del desarrollo nativo de Android, donde se podría usar `ConstraintLayout`, en Flutter la UI se construye mediante la composición de widgets (Flutter, s.f.-c). Para la pantalla principal, se optó por un diseño vertical simple utilizando un widget `Column` dentro de un `Center`. Esta estructura es ideal para presentar un menú de opciones claras y directas, ya que organiza los botones de navegación (`AnimatedButton`) uno debajo del otro, guiando al usuario de forma natural a través de las acciones principales disponibles. El uso de `SingleChildScrollView` asegura que la interfaz siga siendo funcional en pantallas más pequeñas, evitando el desbordamiento de píxeles.
+Para la pantalla principal, se optó por un diseño vertical simple utilizando un widget `Column` dentro de un `Center`. Esta estructura es ideal para presentar un menú de opciones claras y directas, ya que organiza los botones de navegación (`AnimatedButton`) uno debajo del otro, guiando al usuario de forma natural a través de las acciones principales disponibles. 
 
 ### Navegación Intuitiva
 
 La navegación se diseñó para ser predecible y coherente con los patrones de diseño móvil establecidos. Desde la pantalla de inicio, cada botón lleva a una sección específica de la aplicación. Este flujo de navegación directo minimiza la carga cognitiva del usuario, permitiéndole acceder a la funcionalidad deseada con un solo toque. La transición entre pantallas utiliza `MaterialPageRoute`, que proporciona animaciones estándar de la plataforma, reforzando la sensación de familiaridad y profesionalismo en la aplicación.
 
-## Implementación Técnica
-
-La implementación se adhirió a las mejores prácticas recomendadas por el framework de Flutter para garantizar un código mantenible y escalable.
-
 ### Navegación entre Pantallas
 
-En lugar de `Intents`, que son un componente del sistema Android para la comunicación entre actividades, Flutter gestiona la navegación mediante un widget `Navigator` que administra una pila de `Routes` (Flutter, s.f.-b). En Eco-Ciudad, la navegación se implementa de manera imperativa:
+Flutter gestiona la navegación mediante un widget `Navigator` que administra una pila de `Routes`
+
 
 ```dart
 // Navegación desde la pantalla principal a la pantalla del calendario.
@@ -55,7 +52,7 @@ Al presionar un botón, se crea una nueva `MaterialPageRoute` y se "empuja" (`pu
 
 Uno de los desafíos técnicos fue la pérdida del estado del contador en la pantalla de estadísticas al rotar el dispositivo. Esto ocurre porque el framework destruye y reconstruye el árbol de widgets, perdiendo el estado local de los `StatefulWidgets`.
 
-La solución en Android nativo sería `onSaveInstanceState()`. Sin embargo, la solución idiomática en Flutter es el `RestorationMixin` (Flutter, s.f.-a). Se implementó de la siguiente manera:
+Usamos una funcion exclusiva de Flutter llamada `RestorationMixin` y se implementó de la siguiente manera:
 
 1.  **Uso de `RestorationMixin`**: La clase de estado `_StatsScreenState` se extendió con `with RestorationMixin`.
 2.  **Estado Restaurable**: La variable del contador se declaró como un `RestorableInt` en lugar de un `int` simple.
@@ -71,18 +68,15 @@ class _StatsScreenState extends State<StatsScreen> with RestorationMixin {
   @override
   void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
     registerForRestoration(_recycleCount, 'recycle_count');
-  }
-  // ... resto del código
-}
 ```
 
 Esta solución garantiza que el estado persista a través de interrupciones del sistema, como cambios de orientación, sin necesidad de una gestión manual compleja.
 
 ## Proceso de Pruebas
 
-Para asegurar la calidad y el correcto funcionamiento de la aplicación, se utilizó el registro de eventos y la depuración integrada. En lugar de Logcat (específico de Android), se empleó la biblioteca `dart:developer`, que proporciona una herramienta de registro estructurada y agnóstica a la plataforma.
+Para asegurar la calidad y el correcto funcionamiento de la aplicación, se utilizó el registro de eventos y la depuración integrada. En lugar de Logcat  se empleó la biblioteca `dart:developer`, que proporciona una herramienta de registro estructurada y agnóstica a la plataforma.
 
-Se insertaron llamadas a `developer.log()` en puntos clave del ciclo de vida del `_StatsScreenState` (`initState`, `restoreState`, `build`, `deactivate`, `dispose`). Al rotar el dispositivo, la consola de depuración mostró el siguiente flujo de eventos, permitiendo verificar que el estado se estaba gestionando correctamente:
+Por ejemplo al rotar el dispositivo, la consola de depuración mostró el siguiente flujo de eventos, permitiendo verificar que el estado se estaba gestionando correctamente:
 
 ```
 [StatsScreenLifecycle] deactivate called
@@ -91,8 +85,11 @@ Se insertaron llamadas a `developer.log()` en puntos clave del ciclo de vida del
 [StatsScreenLifecycle] restoreState called
 [StatsScreenLifecycle] build called
 ```
+Tambien funciona cuando hacemos click en el boton de añadir basura.
 
-Este fragmento de registro ilustra claramente cómo el estado del widget es destruido (`dispose`) y recreado (`initState`, `restoreState`, `build`) durante una rotación, demostrando la efectividad de la solución de persistencia de estado implementada.
+Este fragmento de registro enseña cómo el estado del widget es destruido (`dispose`) y recreado (`initState`, `restoreState`, `build`) durante una rotación.
+
+Tambien funciona cuando hacemos click en el boton de añadir basura llevando un conteo en la consola de los clicks dados.
 
 ## Conclusión
 
