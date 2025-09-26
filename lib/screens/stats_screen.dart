@@ -1,5 +1,6 @@
 // Importaciones necesarias para el widget.
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:developer' as developer;
 
 /// [StatsScreen] es un widget con estado que muestra las estadísticas de reciclaje del usuario.
@@ -80,6 +81,25 @@ class _StatsScreenState extends State<StatsScreen> with RestorationMixin {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mis Estadísticas'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.screen_rotation),
+            onPressed: () {
+              final orientation = MediaQuery.of(context).orientation;
+              if (orientation == Orientation.portrait) {
+                SystemChrome.setPreferredOrientations([
+                  DeviceOrientation.landscapeLeft,
+                  DeviceOrientation.landscapeRight,
+                ]);
+              } else {
+                SystemChrome.setPreferredOrientations([
+                  DeviceOrientation.portraitUp,
+                  DeviceOrientation.portraitDown,
+                ]);
+              }
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
