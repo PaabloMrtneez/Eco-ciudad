@@ -85,7 +85,6 @@ Por ejemplo al rotar el dispositivo, la consola de depuración mostró el siguie
 [StatsScreenLifecycle] restoreState called
 [StatsScreenLifecycle] build called
 ```
-Tambien funciona cuando hacemos click en el boton de añadir basura.
 
 Este fragmento de registro enseña cómo el estado del widget es destruido (`dispose`) y recreado (`initState`, `restoreState`, `build`) durante una rotación.
 
